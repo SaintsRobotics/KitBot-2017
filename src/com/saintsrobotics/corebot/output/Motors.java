@@ -12,10 +12,8 @@ public abstract class Motors {
     
     public final MotorGroup leftDrive1;
     public final MotorGroup leftDrive2;
-    public final MotorGroup leftDrive3;
     public final MotorGroup rightDrive1;
     public final MotorGroup rightDrive2;
-    public final MotorGroup rightDrive3;
     public final MotorGroup leftMotors;
     public final MotorGroup rightMotors;
     public final MotorGroup allMotors;
@@ -24,26 +22,20 @@ public abstract class Motors {
                      int rightDrivePin1, int rightDrivePin2, int rightDrivePin3) {
         Motor motorLeftDrive1 = new Motor(leftDrivePin1);
         Motor motorLeftDrive2 = new Motor(leftDrivePin2);
-        Motor motorLeftDrive3 = new Motor(leftDrivePin3);
         Motor motorRightDrive1 = new Motor(rightDrivePin1);
         Motor motorRightDrive2 = new Motor(rightDrivePin2);
-        Motor motorRightDrive3 = new Motor(rightDrivePin3);
         motorList.add(motorLeftDrive1);
         motorList.add(motorLeftDrive2);
-        motorList.add(motorLeftDrive3);
         motorList.add(motorRightDrive1);
         motorList.add(motorRightDrive2);
-        motorList.add(motorRightDrive3);
         
         leftDrive1 = new MotorGroup(motorLeftDrive1);
         leftDrive2 = new MotorGroup(motorLeftDrive2);
-        leftDrive3 = new MotorGroup(motorLeftDrive3);
         rightDrive1 = new MotorGroup(motorRightDrive1);
         rightDrive2 = new MotorGroup(motorRightDrive2);
-        rightDrive3 = new MotorGroup(motorRightDrive3);
         
-        leftMotors = new MotorGroup(motorLeftDrive1, motorLeftDrive2, motorLeftDrive3);
-        rightMotors = new MotorGroup(motorRightDrive1, motorRightDrive2, motorRightDrive3);
+        leftMotors = new MotorGroup(motorLeftDrive1, motorLeftDrive2);
+        rightMotors = new MotorGroup(motorRightDrive1, motorRightDrive2);
         
         allMotors = new MotorGroup(leftMotors, rightMotors);
     }
